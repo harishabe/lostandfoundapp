@@ -54,9 +54,7 @@ export class SignUpComponent implements OnInit {
   }
 
   successResponse(response) {
-    console.log('response', response);
     this.showSpinner = false;
-    this.toastr.success('Successfully Logged In');
     this.toastr.success('Successfully registered!');
   }
 
