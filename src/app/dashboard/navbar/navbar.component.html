@@ -1,0 +1,51 @@
+<mat-sidenav-container id="nav-bar" class="sidenav-container">
+
+  <!-- BELOW CODE SIDE BAR WITH MENU -->
+  <mat-sidenav #drawer class="sidenav sidebar-box-shadow" fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)">
+    <mat-toolbar class="sidenav-header">
+    </mat-toolbar>
+    <mat-nav-list class="sidebar-list">
+      <a mat-list-item matTooltip="Lost Items" routerLink="/dashboard/lostItem">
+        <mat-icon class="material-icons">location_disabled
+        </mat-icon>
+      </a>
+
+      <a mat-list-item matTooltip="Found Items" routerLink="/dashboard/foundItem">
+        <mat-icon class="material-icons">location_searching</mat-icon>
+      </a>
+
+      <a mat-list-item matTooltip="Pre-Registered Items" routerLink="/dashboard/addProduct">
+        <mat-icon class="material-icons">add</mat-icon>
+      </a>
+
+      <a mat-list-item matTooltip="Message" routerLink="/dashboard/messages">
+        <mat-icon class="material-icons">message</mat-icon>
+      </a>
+
+      <a mat-list-item matTooltip="Profile" routerLink="/dashboard/profile">
+        <mat-icon class="material-icons">person_outline</mat-icon>
+      </a>
+
+      <a (click)="logout()" matTooltip="Log out" mat-list-item style="position:absolute;bottom:0px">
+        <mat-icon class="material-icons">exit_to_app</mat-icon>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <!-- END SIDEBAR MENU -->
+
+  <mat-sidenav-content>
+    <mat-toolbar class="navbar-header" color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">
+          <mat-icon class="material-icons">
+            menu
+          </mat-icon>
+        </mat-icon>
+      </button>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

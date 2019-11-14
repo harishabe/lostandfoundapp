@@ -1,0 +1,118 @@
+<div class="container plr0" style="margin-top:80px">
+  <div class="add-product-container" style="height: 530px;">
+    <form [formGroup]="reportItem" autocomplete="off" novalidate (ngSubmit)="reportLostFound(reportItem.value)">
+      <mat-card>
+        <mat-card-content>
+          <div class="col-md-12 plr0">
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input type="text" matInput placeholder="Title" formControlName="title">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input type="text" matInput placeholder="Reporter" formControlName="reporter">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input type="text" matInput placeholder="Category" formControlName="category">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input type="text" matInput placeholder="Sub Category" formControlName="subcat">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input matInput [matDatepicker]="lostItemDate" placeholder="Date for Lost Item"
+                    formControlName="datelost">
+                  <mat-datepicker-toggle matSuffix [for]="lostItemDate"></mat-datepicker-toggle>
+                  <mat-datepicker #lostItemDate></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input matInput [matDatepicker]="foundItemDate" placeholder="Date for Found Item"
+                    formControlName="datefound">
+                  <mat-datepicker-toggle matSuffix [for]="foundItemDate"></mat-datepicker-toggle>
+                  <mat-datepicker #foundItemDate></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input matInput placeholder="Place for Lost Item" formControlName="placeLostItem">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input matInput placeholder="Place for Found Item" formControlName="placeFoundItem">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input matInput placeholder="Brand" formControlName="brand">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input matInput placeholder="Model" formControlName="model">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input matInput placeholder="Color" formControlName="color">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input matInput placeholder="Reward" formControlName="reward">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input matInput placeholder="Lost" formControlName="lost">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input matInput placeholder="Found" formControlName="found">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input matInput placeholder="Returned" formControlName="returned">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input matInput placeholder="Identifier" formControlName="identifier">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input matInput placeholder="Markings" formControlName="markings">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <input type="file">
+              </div>
+              <div class="col-md-6">
+                <mat-form-field>
+                  <textarea matInput placeholder="Description" formControlName="description"></textarea>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button color="primary" [disabled]="!reportItem.valid" mat-button mat-raised-button>
+            REGISTER ITEM
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+  </div>
+</div>

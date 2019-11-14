@@ -1,0 +1,97 @@
+<!--<div class="container">
+  <div class="col-md-8 margin-auto">
+    <mat-card class="mt30">
+      <mat-card-content>
+        <div class="lost-something-container">
+          <mat-form-field>
+            <mat-select placeholder="City">
+              <mat-option value="option">Bengaluru</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput [matDatepicker]="datepicker" placeholder="Date" />
+            <mat-datepicker-toggle matSuffix></mat-datepicker-toggle>
+            <mat-datepicker #datepicker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-select placeholder="Category">
+              <mat-option value="option">Mobile</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button mat-raised-button color="primary" (click)="showToaster()">Search</button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>-->
+
+
+<div class="container" style="margin-top:80px">
+  <div class="row">
+    <div class="spinner_overlay" *ngIf="showSpinner">
+      <mat-spinner strokeWidth="5" [diameter]="50" class="spinner"></mat-spinner>
+    </div>
+    <div class="col-md-12">
+      <button mat-raised-button (click)="lostItemFilter()"><i class="material-icons">filter_list</i></button>
+      <div style="margin-top:10px;" *ngIf="showLostItemFilter">
+        <mat-card>
+          <mat-card-content>
+            <div class="lost-something-container">
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-4">
+                    <mat-form-field>
+                      <mat-select placeholder="City">
+                        <mat-option value="option">Bengaluru</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-4">
+                    <mat-form-field>
+                      <input matInput [matDatepicker]="datepicker" placeholder="Date" />
+                      <mat-datepicker-toggle matSuffix></mat-datepicker-toggle>
+                      <mat-datepicker #datepicker></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-4">
+                    <mat-form-field>
+                      <mat-select placeholder="Category">
+                        <mat-option value="option">Mobile</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <button style="float:right" mat-raised-button color="primary">Search</button>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="rewards" style="margin-top:15px" *ngFor="let res of contents">
+        <mat-card class="sub-title">
+          <mat-card-title>
+            <h6 style="text-transform: uppercase;">{{res.title}} , {{res.date_lost}}</h6>
+          </mat-card-title>
+          <mat-card-content>
+            <ul class="lostItem sub-title" style="font-weight: 500;">
+              <li>Model : {{res.model}}</li>
+              <li>Color : {{res.color}}</li>
+              <li>Place Lost : {{res.place_lost}}</li>
+              <li>Category: {{res.cat.cat}}</li>
+              <li>Subcategory: {{res.subcat.subcat}}</li>
+            </ul>
+          </mat-card-content>
+          <mat-card-actions style="text-align:right">
+            <button mat-raised-button routerLink="/landingPage/layout/signIn" color="primary">Claim Item</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<mat-form-field>
+    <mat-select placeholder="{{label}}">
+      <mat-option value="option">{{data}}</mat-option>
+    </mat-select>
+  </mat-form-field> -->
